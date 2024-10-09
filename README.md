@@ -114,11 +114,11 @@ Al momento de agendar una cita, el estudiante utilizará un calendario interacti
 
 # Diagrama de contexto
 
----
+![Diagrama de contexto](diagramas/diagrama_contexto.png)
 
 # Diagrama de casos de uso
 
----
+![Diagrama de contexto](diagramas/diagrama_casos_uso.png)
 
 # Actores
 
