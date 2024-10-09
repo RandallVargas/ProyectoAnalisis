@@ -118,7 +118,7 @@ Al momento de agendar una cita, el estudiante utilizará un calendario interacti
 
 # Diagrama de casos de uso
 
-![Diagrama de contexto](diagramas/diagrama_casos_uso.png)
+![Diagrama de caso de uso](diagramas/diagrama_casos_uso.png)
 
 # Actores
 
@@ -239,7 +239,8 @@ Este caso de uso permite registrar a un estudiante en el sistema proporcionando 
 
 ### Prototipo:
 
-_Imagen_
+![Prototipo Registrar Estudiante](diagramas/prototipo_registrar_estudiante.png)
+
 
 #### Autor:
 
@@ -286,6 +287,8 @@ Este caso de uso permite que un estudiante registre una cita médica en el siste
 2. El estudiante selecciona otra especialidad o regresa al menú principal.
 
 ## Prototipo
+
+![Prototipo Registrar Citas Medicas](diagramas/prototipo_registrar_citas.png)
 
 ## Requerimientos Especiales
 
@@ -358,6 +361,8 @@ Este caso de uso permite que un estudiante cancele una cita médica previamente 
 
 ## Prototipo
 
+![Prototipo Cancelar Citas Medicas](diagramas/prototipo_cancelar_citas.png)
+
 ## Requerimientos Especiales
 
 1. **Notificación automática**: Cuando la cita es cancelada, se envía una notificación por correo electrónico al estudiante sobre la cancelación o cualquier modificación en su cita.
@@ -417,6 +422,8 @@ Este caso de uso permite que el sistema envíe una notificación por correo elec
 
 ### Prototipo
 
+![Prototipo confirmar estado de la cita](diagramas/prototipo_confirmar_estado_cita.png)
+
 ## Requerimientos Especiales
 
 - El sistema debe enviar correos electrónicos con un formato estándar que incluya los detalles de la cita.
@@ -475,6 +482,8 @@ Este caso de uso permite que un estudiante consulte su historial de citas en el 
 
 ### Prototipo
 
+![Prototipo consultar historial de citas](diagramas/prototipo_consultar_citas.png)
+
 ## Escenarios de Prueba
 
 | **Entrada**                              | **Acción**                                   | **Resultado Esperado**                                               |
@@ -525,6 +534,8 @@ Este caso de uso permite que un estudiante consulte la disponibilidad de citas m
 2. El estudiante regresa al menú principal o selecciona otra especialidad.
 
 ### Prototipo
+
+![Prototipo consultar disponibilidad de las citas](diagramas/prototipo_consultar_disponibilidad.png)
 
 ## Requerimientos Especiales
 
@@ -589,6 +600,9 @@ Este caso de uso permite registrar a un doctor en el sistema para que pueda brin
 
 ### Prototipo
 
+![Prototipo registrar Doctores](diagramas/prototipo_registar_doctor.png)
+
+
 ## Requerimientos Especiales
 
 1. El número de colegiado debe ser único en el sistema.
@@ -650,7 +664,9 @@ Este caso de uso permite que un doctor modifique su horario de trabajo en el sis
 1. El sistema debe validar que los horarios introducidos no se sobrepongan con horarios ya existentes.
 2. El sistema debe notificar automáticamente a los estudiantes si alguna de sus citas se ve afectada por el cambio de horario.
 
----
+### Prototipo
+
+![Prototipo modificar horario de doctor](diagramas/prototipo_modificar_horario_doctor.png)
 
 ## Escenarios de Prueba
 
@@ -703,6 +719,8 @@ Este caso de uso permite que un doctor consulte su horario de trabajo en el sist
 2. El doctor regresa al menú principal.
 
 ### Prototipo
+
+![Prototipo consultar horario doctor](diagramas/prototipo_consultar_horario_doctor.png)
 
 ## Escenarios de Prueba
 
@@ -761,6 +779,8 @@ Este caso de uso permite que un doctor consulte las citas asignadas en su agenda
 2. El doctor regresa al menú principal.
 
 ## Prototipo
+
+![Prototipo consultar citas agendadas doctor](diagramas/prototipo_consultar_citas_doctor.png)
 
 ## Requerimientos Especiales
 
@@ -825,6 +845,8 @@ Este caso de uso permite que un doctor modifique las citas ya registradas en su 
 2. El doctor selecciona otra fecha u hora disponible.
 
 ### Prototipo
+
+![Prototipo modificar citas agendadas doctor](diagramas/prototipo_modificar_citas_doctor.png)
 
 ## Requerimientos Especiales
 
@@ -894,7 +916,9 @@ Este caso de uso permite que un doctor cancele una cita previamente registrada e
 1. El sistema debe notificar automáticamente al paciente sobre la cancelación de su cita por correo electrónico.
 2. Las cancelaciones deben ser registradas en el historial del doctor para referencia futura.
 
----
+### Prototipo
+
+![Prototipo cancelar citas agendadas doctor](diagramas/prototipo_cancelar_citas_doctor.png)
 
 ## Escenarios de Prueba
 
