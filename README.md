@@ -44,7 +44,7 @@ Al momento de agendar una cita, el estudiante utilizará un calendario interacti
 
 - _Descripción_: El estudiante puede consultar el historial de sus citas, tanto pasadas como futuras.
 - _Problema que resuelve_: Proporciona a los estudiantes acceso rápido y sencillo a su historial de citas, permitiéndoles revisar detalles de citas pasadas y futuras sin necesidad de contactar directamente con la clínica.
-- _Actores_: Sistema - Estudiante - Doctor
+- _Actores_: Sistema - Estudiante
 
 **RF-06: Consultar la Disponibilidad de Citas**
 
@@ -138,11 +138,12 @@ El actor estudiante interactúa con el sistema para realizar varias acciones rel
 
 Este actor está relacionado con los siguientes casos de uso:
 
-- **UC01:** Registrar cita médica
-- **UC02:** Cancelar cita médica
-- **UC03:** Consultar historial de citas
-- **UC04:** Confirmar estado de la cita (notificación por correo)
-- **UC05:** Consultar disponibilidad de citas
+- **CU-01RF-01:** Registrar estudiante
+- **CU-01RF-02:** Registrar cita médica
+- **CU-01RF-03:** Cancelar cita médica
+- **CU-01RF-04:** Consultar historial de citas
+- **CU-01RF-05:** Confirmar estado de la cita (notificación por correo)
+- **CU-01RF-06:** Consultar disponibilidad de citas
 
 #### Especificaciones de Interfaz
 
@@ -167,12 +168,12 @@ El actor doctor interactúa con el sistema para gestionar su agenda de citas, co
 
 Este actor está relacionado con los siguientes casos de uso:
 
-- **UC07:** Registrar doctores
-- **UC08:** Modificar su horario de trabajo
-- **UC09:** Consultar su horario de trabajo
-- **UC10:** Consultar citas asignadas
-- **UC11:** Modificar cita en su agenda
-- **UC12:** Cancelar cita en su agenda
+- **CU-01RF-07:** Registrar doctores
+- **CU-01RF-08:** Modificar su horario de trabajo
+- **CU-01RF-09:** Consultar su horario de trabajo
+- **CU-01RF-10:** Consultar citas asignadas
+- **CU-01RF-11:** Modificar cita en su agenda
+- **CU-01RF-12:** Cancelar cita en su agenda
 
 #### Especificaciones de Interfaz
 
