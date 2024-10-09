@@ -1,6 +1,6 @@
 # Sistema de control de citas médicas
 
-# Descripción del problema
+## Descripción del problema
 
 En la clínica universitaria contamos con un total de 5 médicos, distribuidos de la siguiente manera: dos médicos generales, el Dr. Juan Pérez y la Dra. Ana López; un pediatra, el Dr. Carlos Fernández; una ginecóloga, la Dra. Laura Gómez; y un especialista en medicina interna, el Dr. Roberto Martínez. Los horarios de estos médicos varían: el Dr. Juan Pérez trabaja de lunes a viernes de 8:00 AM a 12:00 PM y de lunes a jueves de 2:00 PM a 5:00 PM, mientras que la Dra. Ana López tiene el mismo horario matutino pero atiende por la tarde solo de lunes a miércoles de 2:00 PM a 5:00 PM. Por su parte, el Dr. Carlos Fernández atiende a pacientes de pediatría los lunes, miércoles y viernes de 9:00 AM a 1:00 PM y los martes y jueves de 3:00 PM a 6:00 PM. La Dra. Laura Gómez recibe consultas de ginecología los lunes y miércoles de 8:00 AM a 12:00 PM y los martes y jueves de 1:00 PM a 4:00 PM. Finalmente, el Dr. Roberto Martínez trabaja en medicina interna los lunes, miércoles y viernes de 10:00 AM a 2:00 PM y los martes y jueves de 2:00 PM a 6:00 PM.
 
