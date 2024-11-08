@@ -316,7 +316,9 @@ Este caso de uso permite registrar un estudiante al sistema proporcionando su in
 ----------------------------------------
 
 *Descripción:*           
+
 Este caso de uso permite que un estudiante registre una cita médica en el sistema de gestión de citas de la clínica universitaria, seleccionando la especialidad o médico de preferencia y la fecha y hora disponibles, validando la disponibilidad en tiempo real.
+
 
 
 *Actores:*           
@@ -324,16 +326,20 @@ Este caso de uso permite que un estudiante registre una cita médica en el siste
 \- Sistema de Gestión de Citas
 
 
-*Precondiciones:*             
-\- El estudiante debe estar registrado y autenticado en el sistema.             
-\- El estudiante debe proporcionar información personal (nombre completo, número de estudiante y correo electrónico).             
+*Precondiciones:*    
+
+\- El estudiante debe estar registrado y autenticado en el sistema.              
+\- El estudiante debe proporcionar información personal (nombre completo, número de estudiante y correo electrónico).              
 \- Debe haber disponibilidad en el horario del médico o especialidad seleccionada.
 
 
-*Postcondiciones:*             
-\- La cita se registra correctamente en el sistema con la información proporcionada.             
-\- El estudiante recibe una confirmación de la cita a través de correo electrónico.             
+
+*Postcondiciones:*           
+
+\- La cita se registra correctamente en el sistema con la información proporcionada.              
+\- El estudiante recibe una confirmación de la cita a través de correo electrónico.              
 \- El sistema envía recordatorios automáticos antes de la cita.
+
 
 
 *Flujo Principal (Actualizado)*
@@ -347,7 +353,8 @@ Este caso de uso permite que un estudiante registre una cita médica en el siste
 7. El Sistema de Gestión de Citas muestra al estudiante los horarios disponibles basados en la consulta de disponibilidad.
 8. El estudiante selecciona la fecha y hora deseadas de los horarios disponibles.
 9. El estudiante confirma la cita.
-10. El Sistema de Gestión de Citas registra la cita en la base de datos y envía una confirmación por correo electrónico al estudiante.
+10. El Sistema de Gestión de Citas registra la cita en la base de datos y envía una confirmación por correo electrónico al estudiante. *\[CU-I-01\](Envio de notificaciones.)*
+
 
 
 *Flujo Alternativo:*
@@ -409,8 +416,9 @@ Este caso de uso permite que un estudiante cancele una cita médica previamente 
 
 ### Precondiciones
 
-- El estudiante debe estar registrado y autenticado en el sistema.
-- Debe existir una cita agendada.
+* El estudiante debe estar registrado y autenticado en el sistema.
+* Debe existir al menos una cita asignada al estudiante.
+
 
 ### Postcondiciones
 
@@ -448,26 +456,24 @@ Este caso de uso permite que un estudiante cancele una cita médica previamente 
 Cuando la cita es cancelada, se envía una notificación por correo electrónico al estudiante sobre la cancelación o cualquier modificación en su cita.
 
 
+
 ## Prototipo
 
 ![Prototipo Cancelar Citas Medicas](diagramas/prototipo_cancelar_citas.png)
 
-## Requerimientos Especiales
 
-1. **Notificación automática**: Cuando la cita es cancelada, se envía una notificación por correo electrónico al estudiante sobre la cancelación o cualquier modificación en su cita.
-2. **Registro en historial**: La cancelación es registrada en el historial del doctor para referencia futura.
 
 ---
 
 ## Escenarios de Prueba
 
-| **Entrada**                      | **Acción**                                                | **Resultado Esperado**                                                                            |
-| -------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| Credenciales válidas             | El estudiante accede al sistema                           | Se muestra el menú principal                                                                      |
-| Sin citas en el día seleccionado | El estudiante consulta sus citas                          | Mensaje: “No hay citas asignadas para el rango seleccionado”                                      |
-| Cita con fecha mal asignada      | El estudiante consulta sus citas                          | Mensaje de error por fecha incorrecta y opción de corregir o eliminar la cita                     |
-| Selección de rango de tiempo     | El estudiante selecciona “Consultar Citas” para la semana | El sistema muestra todas las citas de la semana con nombre del doctor, horario, motivo y duración |
 
+| Entrada | Acción | Resultado esperado |
+| --- | --- | --- |
+| Credenciales válidas | El estudiante accede al sistema  | Se muestra el menú principal |
+| Sin citas en el día seleccionado | Estudiante consulta sus citas  | Mensaje: “No hay citas asignadas para el rango seleccionado” |
+| Cita con fecha mal asignada | Estudiante consulta sus citas | Mensaje de error por fecha incorrecta y opción de corregir o eliminar la cita |
+| Selección de rango de tiempo  | Estudiante selecciona “Consultar Citas” para la semana | El sistema muestra todas las citas de la semana. con nombre del doctor, horario, motivo y duración |
 ---
 
 ## Autor:
