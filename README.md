@@ -541,13 +541,13 @@ Este caso de uso permite que un estudiante consulte su historial de citas en el 
 
 ---
 
-## CU-01RF-06: Consultar Disponibilidad de Citas
+## CU-01RF-06: Consultar Disponibilidad de Citas por Especialidad
 
 ----------------------------------------------------
 
 ### Descripción
 
-Este caso de uso permite que un estudiante consulte la disponibilidad de citas médicas según la especialidad o doctor elegido.
+Este caso de uso permite que un estudiante consulte la disponibilidad de citas médicas según la especialidad seleccionada. El sistema muestra los doctores disponibles dentro de la especialidad y sus respectivos horarios.
 
 ### Actores
 
@@ -557,30 +557,40 @@ Este caso de uso permite que un estudiante consulte la disponibilidad de citas m
 ### Precondiciones
 
 * El estudiante debe estar registrado y autenticado en el sistema.
-* El estudiante debe seleccionar una especialidad o doctor.
+* El estudiante debe seleccionar una especialidad.
 
 ### Postcondiciones
 
-* El sistema muestra la disponibilidad de horarios para la especialidad o doctor seleccionado.
+* El sistema muestra los horarios disponibles de los doctores en la especialidad seleccionada.
 
 ### Flujo Principal
 
-1. El estudiante accede al sistema.
-2. El sistema muestra la opción "Consultar Disponibilidad de Citas".
-3. El estudiante selecciona una especialidad o doctor.
-4. El sistema muestra un calendario con los horarios disponibles para la especialidad o doctor seleccionado.
-5. El estudiante visualiza los horarios disponibles.
+1. El estudiante accede al sistema
+2. El estudiante selecciona la opción de "Consultar Disponibilidad de Citas".
+3. El sistema muestra las especialidades médicas disponibles.
+4. El estudiante selecciona la especialidad que desea consultar. FA-02
+5. El sistema muestra los doctores disponibles en la especialidad seleccionada.
+6. El estudiante elige un doctor de la lista presentada. FA-01
+7. El sistema muestra los horarios disponibles del doctor seleccionado.
+8. El estudiante visualiza los horarios disponible.
 
 ### Flujo Alternativo
 
-### FA-01: No hay disponibilidad
+### FA-01: No hay disponibilidad de citas
 
-* Si el estudiante selecciona una especialidad o doctor y no hay horarios disponibles, el sistema muestra un mensaje indicando que no hay citas disponibles para esa especialidad o doctor. El estudiante puede regresar al menú principal o seleccionar otra especialidad.
+1. Si el estudiante selecciona un doctor y no hay citas disponibles
+2. El sistema muestra un mensaje indicando que no hay citas disponibles para el doctor seleccionado.
+3. El estudiante puede regresar al menú principal o seleccionar otro doctor en la misma especialidad.
 
+### FA-02: No hay doctores disponibles
+
+1. Si el estudiante selecciona una especialidad y no hay doctores disponibles
+2. El sistema muestra un mensaje indicando que no hay doctores disponibles para la especialidad seleccionada.
+3. El estudiante puede regresar al menú principal o seleccionar otra especialidad.
 
 ### Prototipo
 
-![Prototipo Consultar Disponibilidad de Citas](diagramas/prototipo_consultar_disponibilidad_citas.jpg)
+![Prototipo Consultar Disponibilidad de Citas](diagramas/prototipo_consultar_disponibilidad_citas_especialidd.png)
 
 ## Requerimientos Especiales
 
@@ -595,15 +605,16 @@ Este caso de uso permite que un estudiante consulte la disponibilidad de citas m
 
 | Escenario de Prueba | Entrada | Salidas Esperadas |
 | --- | --- | --- |
-| 1\. Consultar disponibilidad sin autenticación | Estudiante no autenticado intenta acceder a la consulta de disponibilidad | Mensaje de error: "Debe iniciar sesión para consultar la disponibilidad de citas." |
-| 2\. Consultar disponibilidad con sesión iniciada | Estudiante autenticado selecciona especialidad y médico | Se muestra el calendario con los horarios disponibles para la especialidad/médico seleccionado. |
-| 3\. Seleccionar especialidad sin identificar médico | Estudiante autenticado selecciona especialidad pero no médico | Mensaje de error: "Debe seleccionar un médico antes de verificar disponibilidad." |
-| 4\. No hay disponibilidad para la especialidad o doctor | Estudiante autenticado selecciona una especialidad y médico sin horarios disponibles | Mensaje: "No hay citas disponibles en la fecha y hora seleccionadas." |
+| 1\. Consultar disponibilidad sin autenticación| El estudiante no autenticado intenta acceder a la opción de "Consultar Disponibilidad de Citas". | El sistema muestra un mensaje de error: "Debe iniciar sesión para consultar la disponibilidad de citas." |
+| 2\. Consultar disponibilidad con sesión iniciada | El estudiante autenticado selecciona una especialidad y un doctor.| El sistema muestra los horarios disponibles para el doctor seleccionado en la especialidad elegida. |
+| 3\. Seleccionar especialidad sin doctores disponibles | El estudiante selecciona una especialidad que no tiene doctores disponibles. | El sistema muestra un mensaje: "No hay doctores disponibles para la especialidad seleccionada."|
+| 4\. Seleccionar doctor sin disponibilidad de citas | El estudiante selecciona una especialidad, elige un doctor y este no tiene citas disponibles.| El sistema muestra un mensaje: "No hay citas disponibles para el doctor seleccionado." |
+| 5\. Consultar disponibilidad y seleccionar otro doctor | El estudiante selecciona un doctor que no tiene citas disponibles y luego decide elegir otro doctor en la misma especialidad. |El sistema muestra los horarios disponibles para el nuevo doctor seleccionado. |
 ---
 
 ### Autor:
 
-- Wanda Granados
+- Wanda Granados Robles
 
 ---
 
