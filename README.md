@@ -1,44 +1,50 @@
 # Sistema de control de citas médicas
 
-## Descripción del problema
+## Descripción del problema (Actualizado)
 
-En la clínica universitaria contamos con un total de 5 médicos, distribuidos de la siguiente manera: dos médicos generales, el Dr. Juan Pérez y la Dra. Ana López; un pediatra, el Dr. Carlos Fernández; una ginecóloga, la Dra. Laura Gómez; y un especialista en medicina interna, el Dr. Roberto Martínez. Los horarios de estos médicos varían: el Dr. Juan Pérez trabaja de lunes a viernes de 8:00 AM a 12:00 PM y de lunes a jueves de 2:00 PM a 5:00 PM, mientras que la Dra. Ana López tiene el mismo horario matutino pero atiende por la tarde solo de lunes a miércoles de 2:00 PM a 5:00 PM. Por su parte, el Dr. Carlos Fernández atiende a pacientes de pediatría los lunes, miércoles y viernes de 9:00 AM a 1:00 PM y los martes y jueves de 3:00 PM a 6:00 PM. La Dra. Laura Gómez recibe consultas de ginecología los lunes y miércoles de 8:00 AM a 12:00 PM y los martes y jueves de 1:00 PM a 4:00 PM. Finalmente, el Dr. Roberto Martínez trabaja en medicina interna los lunes, miércoles y viernes de 10:00 AM a 2:00 PM y los martes y jueves de 2:00 PM a 6:00 PM.
+La clínica universitaria cuenta con cinco médicos que ofrecen diferentes especialidades: dos médicos generales (Dr. Juan Pérez y Dra. Ana López), un pediatra (Dr. Carlos Fernández), una ginecóloga (Dra. Laura Gómez) y un especialista en medicina interna (Dr. Roberto Martínez). Cada uno de ellos tiene horarios específicos para la atención de los estudiantes, lo que varía según la especialidad. Estos horarios deben ser gestionados de manera efectiva para evitar confusiones y asegurar una atención oportuna.
 
-Con un sistema automatizado basado en correos electrónicos, donde se validaría la disponibilidad en tiempo real, se evitarían citas duplicadas y se ofrecería una mayor comodidad al estudiante. Al recibir la solicitud por correo, el sistema gestionaría automáticamente la cita, enviando confirmaciones y recordatorios sin intervención manual. Al momento de sacar una cita, el estudiante deberá proporcionar algunos datos básicos. Estos incluirían el nombre completo, número de estudiante, correo electrónico, motivo de la consulta, preferencia de médico o especialidad y su disponibilidad de horarios. Esta información permitiría validar la identidad del estudiante y asignar la cita de manera eficiente, asegurando que se maneje de forma segura en el sistema.
+Actualmente, el proceso de gestión de citas es manual, y los estudiantes deben contactar a la clínica, ya sea presencialmente o por teléfono, para solicitar una consulta. Este sistema presenta varias limitaciones. Uno de los principales problemas es la falta de control sobre la disponibilidad en tiempo real, lo que lleva a que, en ocasiones, se otorguen citas duplicadas o en horarios que ya no están disponibles. Esto genera confusión y malestar tanto para los estudiantes como para los médicos.
 
-El rango de duración entre citas es variable. Para los médicos generales, como el Dr. Juan Pérez y la Dra. Ana López, cada consulta dura entre 20 y 30 minutos, con un intervalo de 10 minutos entre citas. Para los especialistas, como el Dr. Carlos Fernández en pediatría, la Dra. Laura Gómez en ginecología y el Dr. Roberto Martínez en medicina interna, la consulta puede durar entre 30 y 40 minutos, con 10 a 15 minutos entre cada paciente para la documentación y preparación.
+Otro problema radica en la falta de flexibilidad para modificar o cancelar citas. Si un estudiante necesita cambiar o cancelar su cita, debe comunicarse nuevamente con la clínica, lo que no siempre es un proceso sencillo o rápido. Esto resulta en espacios desperdiciados, ya que las citas canceladas no son liberadas a tiempo para ser ocupadas por otros estudiantes.
 
-La cancelación de citas en este sistema también sería sencilla. El estudiante enviaría su solicitud de cancelación mediante la plataforma web. El sistema verificaría automáticamente los detalles de la cita y, si es válido, cancelaría la cita, actualizando el calendario en tiempo real para liberar el espacio. Una vez completada la cancelación, el estudiante recibiría un correo de confirmación. El sistema gestionaría todo sin intervención humana, y los horarios cancelados estarían disponibles de inmediato para otros estudiantes que deseen reservarlos.
+Además, no existe un sistema claro y automatizado que permita a los estudiantes conocer los horarios disponibles de los médicos y elegir una franja horaria que se ajuste a sus necesidades. El proceso actual depende en gran medida de la disponibilidad del personal de la clínica para revisar los horarios manualmente y asignar una cita, lo que puede generar retrasos y falta de eficiencia.
 
-Al momento de agendar una cita, el estudiante utilizará un calendario interactivo en tiempo real. Tras ingresar a la plataforma, seleccionará la especialidad o el médico que desea ver, y el sistema desplegará un calendario con los días y horas disponibles. Los horarios ocupados aparecerán desactivados, y el estudiante solo podrá seleccionar las franjas horarias disponibles. Una vez seleccionada la cita, el sistema la confirmará y enviará un correo con todos los detalles.
+El tiempo de las consultas también varía según la especialidad, lo que complica aún más la gestión de citas. Los médicos generales, por ejemplo, dedican entre 20 y 30 minutos por consulta, mientras que los especialistas requieren entre 30 y 40 minutos. Sin una adecuada planificación y control de estas diferencias, es común que se produzcan errores en la asignación de tiempos, lo que afecta tanto a los estudiantes como a los médicos.
 
-# Requerimientos funcionales
+Finalmente, el proceso actual de cancelación o modificación de citas es ineficiente, ya que no siempre se actualizan los calendarios en tiempo real, lo que puede generar confusión tanto para los médicos como para los estudiantes que intentan hacer nuevas reservas.
+
+# Requerimientos funcionales (Actualizados)
 
 ## **Estudiante**
 
 **RF-01: Registrar Estudiante**
 
-- _Descripción_: El estudiante se registra en el sistema ingresando su nombre completo, teléfono, correo institucional, dirección de residencia, fecha de nacimiento, número de identificación y carnet que valida que es estudiante.
-- _Problema que resuelve_: Permite validar que los usuarios que acceden al sistema son estudiantes legítimos, garantizando que solo ellos puedan programar citas médicas.
-- _Actores_: Estudiante - Sistema
+- _Descripción: El estudiante se registra en el sistema ingresando su nombre completo, teléfono, correo institucional, dirección de residencia, fecha de nacimiento, número de identificación y carnet que valida que es estudiante.
+- _Problema que resuelve: Permite validar que los usuarios que acceden al sistema son estudiantes legítimos, garantizando que solo ellos puedan programar citas médicas.
+- _Actores: Estudiante - Sistema
+
 
 **RF-02: Registrar Citas**
 
-- _Descripción_: El estudiante registra la cita según lo requiera, con la fecha, hora y doctor con la especialidad que necesite.
-- _Problema que resuelve_: Facilita la programación de citas médicas, asegurando que los estudiantes puedan seleccionar el médico y el horario disponible según su conveniencia, evitando la necesidad de contacto manual con la clínica.
-- _Actores_: Estudiante - Sistema
+- _Descripción: El estudiante registra la cita según lo requiera, con la fecha, hora y doctor con la especialidad que necesite.
+- _Problema que resuelve: Facilita la programación de citas médicas, asegurando que los estudiantes puedan seleccionar el médico y el horario disponible según su conveniencia, evitando la necesidad de contacto manual con la clínica.
+- _Actores: Estudiante - Sistema
+
 
 **RF-03: Cancelar la Cita**
 
-- _Descripción_: El estudiante puede cancelar la cita con un periodo máximo de 24 horas de antelación, siempre y cuando exista dicha cita en su historial.
-- _Problema que resuelve_: Ofrece a los estudiantes la flexibilidad de cancelar citas sin intervención humana, lo que libera automáticamente el horario para otros usuarios. Además, asegura que las cancelaciones se hagan con suficiente antelación para una correcta gestión del calendario.
-- _Actores_: Estudiante - Sistema
+- _Descripción: El estudiante puede cancelar la cita con un periodo máximo de 24 horas de antelación, siempre y cuando exista dicha cita en su historial.
+- _Problema que resuelve: Ofrece a los estudiantes la flexibilidad de cancelar citas sin intervención humana, lo que libera automáticamente el horario para otros usuarios. Además, asegura que las cancelaciones se hagan con suficiente antelación para una correcta gestión del calendario.
+- _Actores: Estudiante - Sistema
 
-**RF-04: Confirmar Estado de la Cita (Notificación por Correo)**
 
-- _Descripción_: Al realizar o cancelar una cita, el estudiante recibirá una notificación por correo electrónico confirmando o cancelando la cita. Esta notificación incluirá detalles como fecha, hora, doctor, especialidad y número de consultorio. Además, el estudiante recibirá un recordatorio dos días antes de la fecha de la cita.
-- _Problema que resuelve_: Asegura que los estudiantes estén informados en tiempo real del estado de sus citas, ya sea confirmación, cancelación o recordatorio, mejorando la comunicación y evitando ausencias inesperadas.
-- _Actores_: Estudiante - Sistema
+**RF-04: Notifica la confirmación de la cita**
+
+- _Descripción: Al realizar o cancelar una cita, el estudiante recibirá una notificación por correo electrónico confirmando o cancelando la cita. Esta notificación incluirá detalles como fecha, hora, doctor, especialidad y número de consultorio. Además, el estudiante recibirá un recordatorio dos días antes de la fecha de la cita.
+- _Problema que resuelve: Asegura que los estudiantes estén informados en tiempo real del estado de sus citas, ya sea confirmación, cancelación o recordatorio, mejorando la comunicación y evitando ausencias inesperadas.
+- _Actores: Estudiante - Sistema
+
 
 **RF-05: Consultar Historial de Citas**
 
@@ -58,63 +64,58 @@ Al momento de agendar una cita, el estudiante utilizará un calendario interacti
 
 **RF-07: Registrar Doctores**
 
-- _Descripción_: El doctor se registra en el sistema proporcionando su información personal y la especialidad a la que pertenece.
+- _Descripción_: El doctor puede ajustar su propio horario de trabajo según su disponibilidad.
 - _Problema que resuelve_: Asegura que solo los doctores registrados en el sistema puedan brindar sus servicios, garantizando la validez de los datos médicos y su acceso a la gestión de citas.
 - _Actores_: Doctor - Sistema
 
-**RF-08: Modificar su Horario de Trabajo**
+**RF-08: Gestionar disponibilidad del doctor**
 
 - _Descripción_: El doctor puede ajustar su propio horario de trabajo según su disponibilidad.
-- _Problema que resuelve_: Da flexibilidad al doctor para ajustar su horario de trabajo en función de su disponibilidad y compromisos, sin requerir la intervención de terceros.
+- _Problema que resuelve_: Evita posibles descoordinaciones y errores en la asignación de citas al proporcionar una herramienta centralizada para que los doctores actualicen sus horarios en tiempo real.
 - _Actores_: Doctor - Sistema
 
 **RF-09: Consultar su Horario de Trabajo**
 
 - _Descripción_: El doctor puede consultar su horario de trabajo de manera rápida y sencilla.
-- _Problema que resuelve_: Permite a los doctores revisar su agenda de forma rápida y sencilla, garantizando que estén al tanto de sus horarios y citas asignadas, optimizando la organización de su tiempo.
+- _Problema que resuelve_: Actualmente, la coordinación de horarios y citas depende de la revisión manual por parte del personal de la clínica, lo que puede ocasionar errores en la planificación y falta de control sobre la disponibilidad. Este sistema permite a los doctores revisar su agenda en tiempo real, eliminando la dependencia de terceros y asegurando que estén al tanto de sus horarios y citas asignadas.
 - _Actores_: Doctor - Sistema
 
 **RF-10: Consultar las Citas Asignadas**
 
 - _Descripción_: El doctor puede consultar las citas que le han sido asignadas, ya sea por día o por semana, para planificar su carga de trabajo.
-- _Problema que resuelve_: Proporciona a los doctores una vista clara de las citas asignadas, permitiéndoles planificar con antelación y gestionar mejor su carga de trabajo.
+- _Problema que resuelve_: El proceso manual de gestión de citas puede llevar a que los doctores no tengan visibilidad clara de las citas que se les han asignado, lo que afecta su capacidad para planificar y optimizar su tiempo. Este sistema proporciona a los doctores una visión consolidada y en tiempo real de sus citas, permitiéndoles gestionar mejor su agenda, evitar conflictos de horarios y asegurar una distribución equitativa de su carga de trabajo.
 - _Actores_: Doctor - Sistema
 
 **RF-11: Modificar Citas de su Agenda**
 
-- _Descripción_: El doctor puede modificar citas previamente registradas en su agenda.
-- _Problema que resuelve_: Otorga a los doctores la capacidad de ajustar citas en caso de cambios o imprevistos, asegurando que se mantenga la comunicación y que el estudiante sea notificado de manera oportuna.
+- _Descripción_: El doctor puede modificar citas previamente registradas en su agenda para ajustar su disponibilidad ante imprevistos o cambios en su horario.
+- _Problema que resuelve_: Actualmente, los doctores necesitan ajustar sus citas debido a imprevistos o cambios en su agenda personal. El sistema facilita esta modificación, garantizando que los estudiantes sean notificados oportunamente y evitando confusiones en la atención.
 - _Actores_: Doctor - Sistema
 
 **RF-12: Cancelar Cita de su Agenda**
 
-- _Descripción_: El doctor tiene la capacidad de cancelar una cita en caso de ser necesario, liberando el horario correspondiente.
-- _Problema que resuelve_: Permite a los doctores cancelar citas por razones justificadas, liberando el espacio en el calendario y evitando que el estudiante pierda tiempo en una cita que no se llevará a cabo.
+- _Descripción_: El doctor puede cancelar una cita en caso de ser necesario por razones justificadas, liberando automáticamente el horario correspondiente y notificando al estudiante afectado.
+- _Problema que resuelve_: Al manejar las cancelaciones de manera manual, se pueden causar retrasos en la notificación al estudiante quien podría no enterarse a tiempo. Este sistema permite a los doctores cancelar citas de forma rápida y automática, liberando el espacio en el calendario y asegurando que el estudiante sea notificado oportunamente para evitar pérdidas de tiempo y confusión.
 - _Actores_: Doctor - Sistema
 
 ---
 
-# Requerimientos suplementarios
+# Requerimientos suplementarios (Actualizado)
 
-**RNF-01**
-
-- _Descripción_: El sistema debe garantizar la disponibilidad y actualización en tiempo real del calendario de citas.
-- _Problema que resuelve_: El sistema gestionará la disponibilidad de citas en tiempo real para evitar duplicaciones y asegurar que los horarios cancelados estén inmediatamente disponibles para otros estudiantes. Esto requiere que el sistema sea capaz de actualizar la disponibilidad de las citas de forma instantánea y precisa cada vez que se realiza, modifica o cancela una cita.
-- _Categoría_: Performance
-- _Subcategoría_: Tiempo de respuesta (Response Time)
-
-**RNF-02**
-
-- _Descripción_: El sistema debe enviar notificaciones por correo electrónico al estudiante dentro de los 5 minutos posteriores a la confirmación o cancelación de una cita.
-- _Problema que resuelve_: El sistema automatizado se basa en el envío de correos electrónicos para la confirmación, recordatorios y cancelación de citas. Para garantizar una buena experiencia de usuario y asegurar la eficiencia del sistema, es necesario que las notificaciones se envíen en un tiempo razonable tras la acción del estudiante, asegurando que reciba una respuesta rápida respecto a sus citas.
-- _Categoría_: Usabilidad
-- _Subcategoría_: Accesibilidad
+| Sigla                | Nombre requerimiento suplementario | Justificación |
+| --- | --- | --- |
+| RNF-01          | El sistema debe proporcionar una interfaz de usuario intuitiva y fácil de usar para la selección de horarios de citas. | La eficiencia y efectividad del sistema depende de una interfaz de usuario bien diseñada que permita a los estudiantes reservar citas sin complicaciones. Esto reducirá el tiempo necesario para completar una reserva y minimizará errores. |
+| Categoría: | Usabilidad |   |
+| Subcategoría: | Estetica |   |
+| RNF-02        | Implementar un sistema de autenticación que requiera credenciales (nombre de usuario y contraseña) para permitir el acceso al sistema.  | Evita accesos no autorizados al sistema, asegurando que solo usuarios legítimos puedan interactuar con sus funciones y datos. Esto protege información confidencial y previene posibles usos indebidos o modificaciones no permitidas. |
+| Categoría: | Seguridad |   |
+| Subcategoría: | Autenticacion |   |
 
 ---
 
-# Diagrama de contexto
+# Diagrama de contexto (Actualizado)
 
-![Diagrama de contexto](diagramas/diagrama_contexto.png)
+![Diagrama de contexto](<diagramas/diagrama de contexto (actualizado).jpg>)
 
 # Diagrama de casos de uso
 
@@ -132,7 +133,7 @@ Este actor representa a los estudiantes en el sistema de gestión de citas médi
 
 #### Descripción del Actor
 
-El actor estudiante interactúa con el sistema para realizar varias acciones relacionadas con la programación y consulta de citas médicas. El estudiante puede registrar nuevas citas, cancelar citas, consultar el historial de citas y verificar la disponibilidad de citas según la especialidad o el médico de su preferencia. Además, el estudiante recibe notificaciones por correo electrónico para confirmar, cancelar o recordar sus citas, mejorando la experiencia y evitando ausencias inesperadas. El estudiante necesita un número de identificación y un carnet de estudiante válido para acceder al sistema.
+El actor estudiante interactúa con el sistema para realizar varias acciones relacionadas con la programación y consulta de citas médicas. El estudiante puede registrar nuevas citas, cancelar citas, consultar el historial de citas y verificar la disponibilidad de citas según la especialidad o el médico de su preferencia. Además, el estudiante recibe notificaciones por correo electrónico para confirmar, cancelar o recordar sus citas, lo que ayuda a reducir las ausencias y mejorar la experiencia. El estudiante necesita un número de identificación y un carnet de estudiante válido para acceder al sistema, el cual será verificado con la base de datos de la universidad.
 
 #### Relaciones del Actor
 
@@ -164,6 +165,7 @@ Este actor representa a los doctores en el sistema de gestión de citas médicas
 
 El actor doctor interactúa con el sistema para gestionar su agenda de citas, consultar su horario de trabajo, modificar o cancelar citas asignadas, y ajustar su disponibilidad de acuerdo con sus compromisos profesionales. También puede ver las citas programadas por los estudiantes y hacer cambios en caso de situaciones imprevistas. El doctor necesita credenciales válidas (nombre de usuario y contraseña) para acceder al sistema, y su perfil está registrado con una especialidad médica.
 
+
 #### Relaciones del Actor
 
 Este actor está relacionado con los siguientes casos de uso:
@@ -178,69 +180,128 @@ Este actor está relacionado con los siguientes casos de uso:
 #### Especificaciones de Interfaz
 
 **U110:** FormularioRegistroDoctor
-**I900:** SistemaDeCitasClínicasUniversitarias
 
 ---
 
 # Casos de uso
 
-## CU-01RF-01: Registrar Estudiante
+## CU-01 RF-01: Registrar Estudiante
+
+### Registrar estudiante
 
 ### Descripción
 
-Este caso de uso permite registrar a un estudiante en el sistema proporcionando su información personal y carné universitario para poder hacer uso del sistema de gestión de citas de la clínica universitaria.
+Este caso de uso permite registrar un estudiante al sistema proporcionando su información personal y carné universitario para poder hacer uso del sistema de gestión de citas de la clínica universitaria. 
 
 ### Actores
 
-- Estudiante
-- Sistema
+* *Primarios:* Estudiante, Sistema.
+
 
 ### Precondiciones
 
-- El estudiante debe tener acceso al sistema y tener un carné universitario vigente.
+* El estudiante debe de tener acceso al sistema y tener carné universitario vigente.
+
 
 ### Postcondiciones
 
-- El estudiante queda registrado correctamente en el sistema.
+* El estudiante queda registrado correctamente en el sistema.
+
 
 ### Flujo Principal
 
 1. El estudiante accede al sistema.
-2. El sistema muestra la opción “Registrar Estudiantes”.
-3. El estudiante selecciona la opción “Registrar Estudiantes”.
-4. El sistema muestra el formulario de registro con la información personal solicitada (nombre completo, número de cédula, carné estudiantil, correo electrónico, número telefónico).
-5. El estudiante completa el formulario.
-6. El sistema valida los datos ingresados y verifica que el carné estudiantil no esté duplicado.
-7. El sistema registra correctamente al estudiante.
+2. El sistema muestra la opción "Registrar Estudiantes".
+3. El estudiante selecciona la opción "Registrar Estudiantes".
+4. El sistema muestra el formulario designado para el registro de la información personal: nombre completo, carné estudiantil, correo institucional, número telefónico.
+5. El estudiante completa el formulario con la información requerida.
+6. El sistema valida los datos que fueron ingresados.
+* *Si los datos no son válidos, pasa al **FA-01*.
+7. El sistema valida que el carné estudiantil ingresado exista y no esté duplicado.
+* *Si el carné no es válido, pasa al **FA-02*.
+* *Si el carné está duplicado, pasa al **FA-03*.
+8. El sistema registra correctamente al estudiante y muestra una confirmación de éxito.
+
 
 ### Flujo Alternativo
 
-#### FA-01: Datos requeridos no válidos
+### *Flujo Alternativo FA-01: Datos requeridos no válidos*
 
-1. El sistema muestra un mensaje de error indicando los campos con datos inválidos.
-2. El estudiante corrige los datos y vuelve a enviarlos.
+1. El sistema valida los campos obligatorios del formulario: nombre completo, número de cédula, carné estudiantil, correo electrónico y número telefónico, siguiendo las siguientes reglas:
 
-#### FA-02: Carné estudiantil duplicado
+* Nombre completo: No puede estar vacío y debe contener solo caracteres alfabéticos y espacios.
+* Carné estudiantil: Debe seguir el formato establecido por la universidad (por ejemplo, "C17640") y no debe estar duplicado en el sistema.
+* Correo electrónico: Debe ser el correo institucional (por ejemplo, nombre.apellido@ucr.ac.cr).
+* Número telefónico: Debe tener el formato correcto y una longitud adecuada (por ejemplo, 8 dígitos).
 
-1. El sistema muestra un mensaje de error indicando que el carné estudiantil ingresado ya existe.
-2. El estudiante modifica el carné y el sistema lo valida nuevamente.
+ 2. Si alguno de estos campos no cumple las reglas:
 
-### Escenarios de Prueba
+* El sistema muestra un mensaje de error específico indicando cuál campo no es válido. Por ejemplo:
+* "El campo nombre completo no puede estar vacío".
+* "El carné estudiantil debe seguir el formato establecido por la universidad".
+* "El correo institucional no tiene un formato válido".
+* "El número telefónico debe tener 8 dígitos".
 
-| **Entrada**                                       | **Salida esperada**                                                                               |
-| ------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| Estudiante completa la información requerida.     | El sistema registra al estudiante correctamente.                                                  |
-| Estudiante omite un campo obligatorio.            | El sistema muestra un mensaje de error indicando los datos que son inválidos.                     |
-| Estudiante ingresa un carné estudiantil inválido. | El sistema muestra un mensaje de error indicando que el carné estudiantil ingresado no es válido. |
+ 3. El estudiante corrige los datos que el sistema ha marcado como inválidos.
 
-#### Eequerimientos Especiales
+ 4. El sistema realiza nuevamente la validación de todos los campos.
 
-- El carné estudiantil debe ser valido.
-- El carné estudiantil no debe de estar duplicado en el sistema.
+ 5. Si los datos son válidos, el sistema continúa con el flujo principal en el paso 7.
+
+
+
+### *Flujo Alternativo FA-02: Carné estudiantil no existente*
+
+1. El sistema valida si el carné estudiantil ingresado existe en los registros de la universidad.
+2. Si el carné estudiantil no existe en el sistema:
+
+* El sistema muestra el siguiente mensaje de error: 
+*"El carné estudiantil ingresado no existe en los registros. Por favor, verifique e ingrese un carné válido."*
+
+ 3. El estudiante corrige el carné estudiantil ingresado.
+
+ 4. El sistema vuelve a validar la existencia del carné.
+
+ 5. Si el carné existe, el sistema continúa con el flujo principal en el paso 7.
+
+### Flujo Alternativo FA-03: Carné estudiantil duplicado
+
+1. El sistema verifica si el carné estudiantil ya está registrado en el sistema.
+2. Si el carné ya existe en el sistema:
+
+* El sistema muestra el siguiente mensaje de error: 
+*"El carné estudiantil ingresado ya está registrado en el sistema. Por favor, ingrese un carné diferente."*
+
+ 3. El estudiante corrige el carné estudiantil ingresado.
+
+ 4. El sistema vuelve a validar el carné estudiantil para asegurarse de que no esté duplicado.
+
+ 5. Si el carné no está duplicado, el sistema continúa con el flujo principal en el paso 7.
+
+*Requerimientos Especiales*
+
+1. Recolección de usuario y contraseña: Durante el registro, se debe solicitar al estudiante que cree un nombre de usuario y una contraseña. Estos serán necesarios para futuros casos de uso que impliquen autenticación (inicio de sesión).
+2. Almacenamiento seguro de credenciales: Las contraseñas deben ser almacenadas de forma segura,  para garantizar la protección de los datos del estudiante.
+3. Interfaz amigable: La interfaz debe ofrecer una experiencia de usuario sencilla y amigable, incluyendo validaciones en tiempo real para los campos obligatorios y mensajes de error claros en caso de que ocurra algún problema durante el registro.
+4. Verificación precisa del carné estudiantil: El sistema debe consultar los registros de la universidad para confirmar que el carné estudiantil ingresado es válido y existe en la base de datos antes de completar el registro del estudiante.
+5. Verificación de la existencia del correo institucional: El sistema debe verificar que el correo institucional proporcionado esté registrado en la base de datos oficial de la universidad antes de permitir la finalización del registro.
+
+
+*Escenarios de prueba:*
+
+| Escenario | Entrada | Salida esperada |
+| --- | --- | --- |
+| Escenario 1: Registro exitoso | Nombre: Daniel Solano, Carné: C17640, Correo: luisdaniel.solano@ucr.ac.cr, Teléfono: 88888888 | Registro exitoso |
+| Escenario 2: Campo obligatorio omitido | Nombre: Daniel Solano, Carné: C17640, Correo: (Vacío), Teléfono: 88888888 | Error: Correo electrónico es obligatorio |
+| Escenario 3: Carné estudiantil no existente | Nombre: Daniel Solano, Carné: Z99999, Correo: luisdaniel.solano@ucr.ac.cr, Teléfono: 88888888 | Error: Carné no existente en la base de datos |
+| Escenario 4: Carné estudiantil duplicado | Nombre: Daniel Solano, Carné: C17640, Correo: luisdaniel.solano@ucr.ac.cr, Teléfono: 88888888 | Error: Carné duplicado |
+| Escenario 5: Formato de correo electrónico inválido | Nombre: Daniel Solano, Carné: C17640, Correo: dani.solanoucr.ac.cr, Teléfono: 88888888 | Error: Formato de correo no válido |
+| Escenario 6: Número telefónico con formato incorrecto | Nombre: Daniel Solano, Carné: C17640, Correo: juan.perez@ucr.ac.cr, Teléfono: 123 | Error: Formato de teléfono incorrecto |
+| Escenario 7: Todos los campos válidos, pero correo institucional no existe | Nombre: Daniel Solano, Carné: C17640, Correo: luisdaniel.solano@ucr.ac.cr, Teléfono: 88888888 | Error: Correo institucional no registrado |
 
 ### Prototipo:
 
-![Prototipo Registrar Estudiante](diagramas/prototipo_registrar_estudiante.png)
+![Prototipo](diagramas/prototipo_registrar_estudiante.jpg)
 
 
 #### Autor:
@@ -249,72 +310,85 @@ Este caso de uso permite registrar a un estudiante en el sistema proporcionando 
 
 ---
 
-## CU-01RF-02: Registrar Citas Médicas
+## CU-01 RF-02: Registrar Citas Médicas
 
-### Descripción
+*Caso de Uso: Registrar Citas Médicas*
+----------------------------------------
 
+*Descripción:*           
 Este caso de uso permite que un estudiante registre una cita médica en el sistema de gestión de citas de la clínica universitaria, seleccionando la especialidad o médico de preferencia y la fecha y hora disponibles, validando la disponibilidad en tiempo real.
 
-### Actores
 
-- Estudiante
-- Sistema de Gestión de Citas
+*Actores:*           
+\- Estudiante             
+\- Sistema de Gestión de Citas
 
-### Precondiciones
 
-- El estudiante debe estar registrado y autenticado en el sistema.
-- Debe haber disponibilidad en el horario del médico o especialidad seleccionada.
+*Precondiciones:*             
+\- El estudiante debe estar registrado y autenticado en el sistema.             
+\- El estudiante debe proporcionar información personal (nombre completo, número de estudiante y correo electrónico).             
+\- Debe haber disponibilidad en el horario del médico o especialidad seleccionada.
 
-### Postcondiciones
 
-- La cita se registra correctamente en el sistema.
-- El estudiante recibe una confirmación de la cita por correo electrónico.
-- El sistema envía recordatorios automáticos antes de la cita.
+*Postcondiciones:*             
+\- La cita se registra correctamente en el sistema con la información proporcionada.             
+\- El estudiante recibe una confirmación de la cita a través de correo electrónico.             
+\- El sistema envía recordatorios automáticos antes de la cita.
 
-### Flujo Principal
+
+*Flujo Principal (Actualizado)*
 
 1. El estudiante accede al sistema.
-2. El sistema verifica las credenciales y muestra el menú principal.
+2. El Sistema de Gestión de Citas verifica las credenciales del estudiante y muestra el menú principal.
 3. El estudiante selecciona la opción "Registrar Cita".
-4. El sistema muestra un formulario con opciones como médico preferido, especialidad, motivo de consulta y disponibilidad de horarios.
-5. El estudiante selecciona el horario y confirma la cita.
-6. El sistema valida y confirma la cita, enviando un correo al estudiante.
+4. El Sistema de Gestión de Citas muestra un formulario con las siguientes opciones: médico, motivo de consulta y disponibilidad de horarios.
+5. El estudiante selecciona el médico deseado.
+6. El Sistema de Gestión de Citas consulta la disponibilidad de horarios en tiempo real para el médico seleccionado, utilizando *CU-01RF06: Consultar la disponibilidad de citas por Especialidad* para obtener los horarios disponibles.
+7. El Sistema de Gestión de Citas muestra al estudiante los horarios disponibles basados en la consulta de disponibilidad.
+8. El estudiante selecciona la fecha y hora deseadas de los horarios disponibles.
+9. El estudiante confirma la cita.
+10. El Sistema de Gestión de Citas registra la cita en la base de datos y envía una confirmación por correo electrónico al estudiante.
 
-### Flujo Alternativo
 
-#### FA-01: No hay horarios disponibles
+*Flujo Alternativo:*
 
-1. El sistema muestra un mensaje indicando la falta de disponibilidad.
-2. El estudiante selecciona otra especialidad o regresa al menú principal.
+\- FA-01: No hay horarios disponibles             
+ 1. El estudiante selecciona un médico o especialidad sin horarios disponibles.             
+ 2. El sistema muestra un mensaje indicando que no hay horarios disponibles para la selección realizada.             
+ 3. El estudiante elige otra especialidad/médico o regresa al menú principal.
+
+\-FA-02: Datos inválidos             
+ 1. El estudiante introduce datos inválidos (horario fuera de disponibilidad, información incompleta, etc.).             
+ 2. El sistema muestra un mensaje de error indicando los datos incorrectos.             
+ 3. El estudiante corrige los datos y vuelve a intentar la reservación.
+
+\-Reglas de Negocio:           
+\- Los horarios deben estar dentro de los horarios laborales establecidos para cada médico.             
+\- El sistema debe evitar la duplicación de citas para un mismo estudiante o médico en los mismos horarios.             
+\- El sistema debe validar que los datos proporcionados por el estudiante sean completos y correctos antes de confirmar la cita.             
+\- Las citas deben incluir intervalos de tiempo para descansos del médico, según la especialidad.
+
 
 ## Prototipo
 
-![Prototipo Registrar Citas Medicas](diagramas/prototipo_registrar_citas.png)
+![Prototipo Registart Citas](diagramas/prototipo_registrar_citas.jpg)
 
-## Requerimientos Especiales
+*Requerimientos Especiales*
 
-1. **Notificaciones Automáticas**: El sistema debe enviar recordatorios automáticos al estudiante, por correo electrónico, con al menos 24 horas de anticipación a la cita.
+1. Accesibilidad Multidispositivo: El sistema debe ser accesible desde diferentes dispositivos (computadoras, tabletas y teléfonos móviles) para que los estudiantes puedan registrar sus citas desde cualquier lugar.
+2. Validación en Tiempo Real: La disponibilidad de horarios debe actualizarse en tiempo real, lo que significa que, cuando un estudiante consulta o selecciona un horario, el sistema verifica de inmediato en la base de datos la disponibilidad actualizada para evitar que varios estudiantes elijan el mismo horario.
+3. Interfaz de Usuario Intuitiva: El sistema debe contar con una interfaz amigable y fácil de usar, con accesibilidad para personas con discapacidades, cumpliendo con las normativas de accesibilidad web (WCAG).
 
-2. **Accesibilidad Multidispositivo**: El sistema debe ser accesible desde diferentes dispositivos (computadoras, tabletas y teléfonos móviles) para que los estudiantes puedan registrar sus citas desde cualquier lugar.
+*Escenarios de Prueba*
 
-3. **Validación en Tiempo Real**: La disponibilidad de horarios debe actualizarse en tiempo real para evitar que varios estudiantes seleccionen el mismo horario.
-
-4. **Historial de Citas**: El sistema debe almacenar un historial de todas las citas agendadas por el estudiante, accesible desde su perfil.
-
-5. **Interfaz de Usuario Intuitiva**: El sistema debe contar con una interfaz amigable y fácil de usar, con accesibilidad para personas con discapacidades, cumpliendo con las normativas de accesibilidad web (WCAG).
-
----
-
-## Escenarios de Prueba
-
-| **Entrada**                     | **Acción**                                                | **Resultado Esperado**                                        |
-| ------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------- |
-| Credenciales válidas            | El estudiante accede al sistema                           | Se muestra el menú principal                                  |
-| Información de cita completa    | El estudiante completa el formulario                      | El sistema muestra los horarios disponibles                   |
-| Horario disponible seleccionado | El estudiante selecciona un horario y confirma            | El sistema confirma la cita y envía un correo electrónico     |
-| Médico/especialidad sin horario | El estudiante selecciona un médico sin horario disponible | El sistema muestra un mensaje de no disponibilidad            |
-| Horario inválido                | El estudiante selecciona un horario no disponible         | El sistema muestra un mensaje de error indicando el conflicto |
-| Datos inválidos                 | El estudiante introduce datos incompletos o incorrectos   | El sistema muestra un mensaje de error y solicita corrección  |
+| Entrada                       | Acción                                                 | Resultado Esperado                                         |
+| --- | --- | --- |
+| Credenciales válidas           | El estudiante accede al sistema                       | Se muestra el menú principal                               |
+| Información de cita completa   | El estudiante completa el formulario                   | El sistema muestra los horarios disponibles                 |
+| Horario disponible seleccionado | El estudiante selecciona un horario y confirma         | El sistema confirma la cita y envía un correo electrónico   |
+| Médico/especialidad sin horario | El estudiante selecciona un médico sin horario disponible | El sistema muestra un mensaje de no disponibilidad         |
+| Horario inválido               | El estudiante selecciona un horario no disponible     | El sistema muestra un mensaje de error indicando el conflicto |
+| Datos inválidos                 | El estudiante introduce datos incompletos o incorrectos | El sistema muestra un mensaje de error y solicita corrección |
 
 ### Autores:
 
@@ -350,15 +424,29 @@ Este caso de uso permite que un estudiante cancele una cita médica previamente 
 3. El estudiante selecciona la opción "Consultar Citas Agendadas".
 4. El sistema muestra las citas agendadas.
 5. El estudiante selecciona la cita a cancelar.
-6. El sistema solicita la confirmación de cancelación.
-7. El estudiante confirma y el sistema cancela la cita, enviando una notificación.
+
+6\.   El sistema verifica si la cita puede ser cancelada dentro del plazo permitido.
+
+* *Si la cancelación está dentro del plazo permitido*, el sistema solicita la confirmación de cancelación.
+* *Si la cancelación está fuera del plazo permitido*, el sistema muestra un mensaje indicando que la cita no puede ser cancelada por estar fuera del plazo permitido.
+7.   El estudiante confirma y el sistema cancela la cita, enviando una notificación.
+
 
 ### Flujo Alternativo
 
 #### FA-01: Cancelación fuera del plazo permitido
 
-1. El sistema muestra un mensaje indicando que la cita no puede ser cancelada por estar fuera del plazo permitido.
-2. El estudiante regresa al menú principal.
+1. El estudiante regresa al menú principal.
+
+*Reglas de Negocio:*
+
+* El estudiante solo puede cancelar citas que le han sido asignadas.
+* Las citas solo pueden ser canceladas antes del horario programado.
+* El sistema debe notificar al doctor cuando una cita es cancelada.
+
+*Requerimientos Especiales:*      
+Cuando la cita es cancelada, se envía una notificación por correo electrónico al estudiante sobre la cancelación o cualquier modificación en su cita.
+
 
 ## Prototipo
 
@@ -388,109 +476,58 @@ Este caso de uso permite que un estudiante cancele una cita médica previamente 
 
 ---
 
-## CU-01RF-04: Confirmar Estado de la Cita (Notificación por Correo)
-
-### Descripción
-
-Este caso de uso permite que el sistema envíe una notificación por correo electrónico al estudiante cuando realiza o cancela una cita. También envía recordatorios automáticos dos días antes de la cita.
-
-### Actores
-
-- Estudiante
-- Sistema
-
-### Precondiciones
-
-- El estudiante debe tener una cita registrada en el sistema.
-- El correo electrónico debe ser válido.
-
-### Postcondiciones
-
-- El estudiante recibe notificaciones de confirmación, cancelación o recordatorio de la cita.
-
-### Flujo Principal
-
-1. El estudiante realiza una acción en el sistema (programar o cancelar una cita).
-2. El sistema genera una notificación y la envía al correo del estudiante con los detalles de la cita.
-3. Dos días antes de la cita, el sistema envía un recordatorio.
-
-### Flujo Alternativo
-
-#### FA-01: Error en el envío del correo
-
-1. El sistema reintenta el envío hasta tres veces.
-2. Si falla, notifica al equipo técnico.
-
-### Prototipo
-
-![Prototipo confirmar estado de la cita](diagramas/prototipo_confirmar_estado_cita.png)
-
-## Requerimientos Especiales
-
-- El sistema debe enviar correos electrónicos con un formato estándar que incluya los detalles de la cita.
-- El sistema debe manejar reintentos automáticos en caso de errores al enviar los correos.
-
----
-
-## Escenarios de Prueba
-
-| **Entrada**        | **Acción**            | **Resultado esperado**                                                      |
-| ------------------ | --------------------- | --------------------------------------------------------------------------- |
-| Cita agendada      | Envío de confirmación | El estudiante recibe un correo de confirmación con los detalles de la cita. |
-| Cita cancelada     | Envío de cancelación  | El estudiante recibe un correo notificando la cancelación de la cita.       |
-| Cita agendada      | Envío de recordatorio | El estudiante recibe un recordatorio 2 días antes de la cita programada.    |
-| Error en el correo | Reintento de envío    | El sistema intenta reenviar el correo hasta tres veces antes de fallar.     |
-
-### Autor:
-
-- Randall Vargas
-
----
-
 ## CU-01RF-05: Consultar Historial de Citas
 
-### Descripción
+#### Descripción
 
 Este caso de uso permite que un estudiante consulte su historial de citas en el sistema de gestión de citas médicas.
 
-### Actores
+#### Actores
 
-- Estudiante
-- Sistema
+* Estudiante
+* Sistema
 
-### Precondiciones
+#### Precondiciones
 
-- El estudiante debe estar registrado y autenticado en el sistema.
-- Debe haber citas registradas en su historial.
+* El estudiante debe estar registrado y autenticado en el sistema.
+* Debe haber citas registradas en su historial.
 
-### Postcondiciones
+#### Postcondiciones
 
-- El estudiante puede visualizar sus citas pasadas y futuras.
+* El estudiante puede visualizar sus citas pasadas y futuras.
 
-### Flujo Principal
+#### Flujo Principal
 
-1. El estudiante accede al sistema.
-2. El sistema muestra la opción de "Consultar Historial de Citas".
-3. El estudiante selecciona la opción.
-4. El sistema muestra la lista de citas pasadas y futuras con detalles como fecha, médico y estado.
+1. El sistema muestra la opción  en el menú "Consultar Historial de Citas".
+2. El estudiante selecciona la opción del menú.
+3. El sistema muestra toda la lista de citas con los siguientes criterios:
 
-### Flujo Alternativo
+* Las citas pasadas se muestran de forma descendente, con las más recientes primero, los detalles de cada cita incluyen la fecha, el médico y el estado(Cancelada, Realizada). FA-01
+* Las citas futuras se muestran de forma ascendente, con la cita más próxima primero, los detalles de cada cita incluyen la fecha, el médico y el estado(Cancelada, Programada). FA-02
 
-#### FA-01: Historial vacío
+#### Flujo Alternativo
 
-1. El sistema muestra un mensaje indicando que no hay citas registradas.
+#### FA-01: Historial vacío de citas pasadas
+
+1. El sistema muestra un mensaje indicando que no hay citas pasadas registradas.
 2. El estudiante regresa al menú principal.
+
+#### FA-02: Historial vacío de citas proximas
+
+1. El sistema muestra un mensaje indicando que no hay citas próximas registradas.
+2. El estudiante regresa al menú principal.
+
 
 ### Prototipo
 
-![Prototipo consultar historial de citas](diagramas/prototipo_consultar_citas.png)
+![Prototipo Consultar Citas](diagramas/prototipo_consultar_citas.jpg)
 
-## Escenarios de Prueba
+#### Escenarios de Prueba
 
-| **Entrada**                              | **Acción**                                   | **Resultado Esperado**                                               |
-| ---------------------------------------- | -------------------------------------------- | -------------------------------------------------------------------- |
-| El estudiante tiene citas registradas    | El estudiante consulta el historial de citas | El sistema muestra la lista de citas pasadas y próximas.             |
-| El estudiante no tiene citas registradas | El estudiante consulta el historial de citas | El sistema muestra un mensaje indicando que no se encontraron citas. |
+| *Entrada* | *Acción* | *Resultado Esperado* |
+| --- | --- | --- |
+| El estudiante tiene citas registradas | El estudiante consulta el historial de citas | El sistema muestra la lista de citas pasadas y próximas. |
+| El estudiante no tiene citas registradas | El estudiante consulta el historial de citas | El sistema muestra un mensaje indicando que no se encontraron citas. |
 
 ### Autor:
 
@@ -500,43 +537,44 @@ Este caso de uso permite que un estudiante consulte su historial de citas en el 
 
 ## CU-01RF-06: Consultar Disponibilidad de Citas
 
+----------------------------------------------------
+
 ### Descripción
 
 Este caso de uso permite que un estudiante consulte la disponibilidad de citas médicas según la especialidad o doctor elegido.
 
 ### Actores
 
-- Estudiante
-- Sistema
-- Doctor
+* Estudiante
+* Sistema
 
 ### Precondiciones
 
-- El estudiante debe estar registrado y autenticado en el sistema.
-- El estudiante debe seleccionar una especialidad o doctor.
+* El estudiante debe estar registrado y autenticado en el sistema.
+* El estudiante debe seleccionar una especialidad o doctor.
 
 ### Postcondiciones
 
-- El sistema muestra la disponibilidad de horarios para la especialidad o doctor seleccionado.
+* El sistema muestra la disponibilidad de horarios para la especialidad o doctor seleccionado.
 
 ### Flujo Principal
 
 1. El estudiante accede al sistema.
 2. El sistema muestra la opción "Consultar Disponibilidad de Citas".
 3. El estudiante selecciona una especialidad o doctor.
-4. El sistema muestra un calendario con los horarios disponibles.
-5. El estudiante selecciona un horario para reservar.
+4. El sistema muestra un calendario con los horarios disponibles para la especialidad o doctor seleccionado.
+5. El estudiante visualiza los horarios disponibles.
 
 ### Flujo Alternativo
 
-#### FA-01: No hay disponibilidad
+### FA-01: No hay disponibilidad
 
-1. El sistema muestra un mensaje indicando que no hay horarios disponibles.
-2. El estudiante regresa al menú principal o selecciona otra especialidad.
+* Si el estudiante selecciona una especialidad o doctor y no hay horarios disponibles, el sistema muestra un mensaje indicando que no hay citas disponibles para esa especialidad o doctor. El estudiante puede regresar al menú principal o seleccionar otra especialidad.
+
 
 ### Prototipo
 
-![Prototipo consultar disponibilidad de las citas](diagramas/prototipo_consultar_disponibilidad.png)
+![Prototipo Consultar Disponibilidad de Citas](diagramas/prototipo_consultar_disponibilidad_citas.jpg)
 
 ## Requerimientos Especiales
 
@@ -544,19 +582,17 @@ Este caso de uso permite que un estudiante consulte la disponibilidad de citas m
 2. Los estudiantes deben identificar la especialidad o el médico que desean consultar antes de verificar la disponibilidad de citas.
 3. El sistema debe actualizar la disponibilidad de horarios en tiempo real, reflejando los cambios inmediatamente después de que un horario sea reservado por otro estudiante.
 
+
 ---
 
 ## Escenarios de Prueba
 
-| **Escenario de Prueba**                                       | **Entrada**                                                                                   | **Salidas Esperadas**                                                                                            |
-| ------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| 1. Consultar disponibilidad sin autenticación                 | Estudiante no autenticado intenta acceder a la consulta de disponibilidad                     | Mensaje de error: "Debe iniciar sesión para consultar la disponibilidad de citas."                               |
-| 2. Consultar disponibilidad con sesión iniciada               | Estudiante autenticado selecciona especialidad y médico                                       | Se muestra la pantalla con el calendario de citas disponibles para la especialidad/médico seleccionado.          |
-| 3. Seleccionar especialidad sin identificar médico            | Estudiante autenticado selecciona especialidad pero no médico                                 | Mensaje de error: "Debe seleccionar un médico antes de verificar disponibilidad."                                |
-| 4. Seleccionar fecha y hora con disponibilidad                | Estudiante autenticado selecciona una fecha y hora donde hay disponibilidad                   | Se muestran las horas disponibles con opción para continuar con la reserva.                                      |
-| 5. Seleccionar fecha y hora sin disponibilidad                | Estudiante autenticado selecciona una fecha y hora donde no hay disponibilidad                | Mensaje: "No hay citas disponibles en la fecha y hora seleccionadas."                                            |
-| 6. Actualización en tiempo real de la disponibilidad de citas | Otro estudiante reserva una cita en el horario seleccionado justo antes del estudiante actual | La disponibilidad de la cita se actualiza automáticamente, y el horario deja de estar disponible en la interfaz. |
-
+| Escenario de Prueba | Entrada | Salidas Esperadas |
+| --- | --- | --- |
+| 1\. Consultar disponibilidad sin autenticación | Estudiante no autenticado intenta acceder a la consulta de disponibilidad | Mensaje de error: "Debe iniciar sesión para consultar la disponibilidad de citas." |
+| 2\. Consultar disponibilidad con sesión iniciada | Estudiante autenticado selecciona especialidad y médico | Se muestra el calendario con los horarios disponibles para la especialidad/médico seleccionado. |
+| 3\. Seleccionar especialidad sin identificar médico | Estudiante autenticado selecciona especialidad pero no médico | Mensaje de error: "Debe seleccionar un médico antes de verificar disponibilidad." |
+| 4\. No hay disponibilidad para la especialidad o doctor | Estudiante autenticado selecciona una especialidad y médico sin horarios disponibles | Mensaje: "No hay citas disponibles en la fecha y hora seleccionadas." |
 ---
 
 ### Autor:
@@ -573,50 +609,81 @@ Este caso de uso permite registrar a un doctor en el sistema para que pueda brin
 
 ### Actores
 
-- Doctor
-- Sistema
+
+* Primarios: Doctor, Sistema.
+
 
 ### Precondiciones
 
-- El doctor debe estar registrado en el sistema.
+
+* El doctor debe tener acceso al sistema como usuario registrado.
+
 
 ### Postcondiciones
 
-- El doctor queda registrado correctamente en el sistema.
+* El doctor queda registrado correctamente en el sistema.
+
 
 ### Flujo Principal
 
 1. El doctor accede al sistema.
 2. El sistema muestra la opción "Registrar Doctores".
-3. El doctor selecciona la opción y completa el formulario con su información personal y especialidad.
-4. El sistema valida los datos ingresados.
-5. El sistema registra al doctor en el sistema.
+3. El doctor selecciona la opción "Registrar Doctores".
+4. El sistema muestra el formulario designado para el registro de la información personal: nombre completo, número de identificación, especialidad médica, número de colegiado, dirección de consulta, teléfono de contacto y correo electrónico.
+5. El doctor completa el formulario con la información requerida.
+6. El sistema valida los datos ingresados.
+* Si los datos no son válidos, se pasa al FA-01.
+7. El sistema verifica que no exista otro doctor con el mismo número de colegiado.
+* Si el número de colegiado está duplicado, se pasa al FA-02.
+8. El sistema registra la información del doctor y muestra una confirmación de éxito.
+
 
 ### Flujo Alternativo
 
-#### FA-01: Datos inválidos
+*Flujo Alternativo FA-01: Datos requeridos no válidos*
 
-1. El sistema muestra un mensaje indicando los campos que contienen errores.
-2. El doctor corrige los datos y los envía nuevamente.
+1. El sistema valida los campos obligatorios del formulario siguiendo estas reglas:
+* *Nombre completo*: No puede estar vacío y debe contener solo caracteres alfabéticos.
+* *Número de identificación*: Debe ser único y válido.
+* *Número de colegiado*: Debe ser único y no estar duplicado en el sistema.
+* *Correo electrónico*: Debe seguir un formato válido.
+* *Teléfono de contacto*: Debe tener el formato correcto y longitud adecuada.
+2. Si alguno de estos campos no cumple con las reglas:
+* El sistema muestra un mensaje de error específico indicando el campo no válido (por ejemplo: "El nombre completo no puede estar vacío").
+3. El doctor corrige los datos inválidos.
+4. El sistema realiza la validación nuevamente.
+5. Si los datos son válidos, continúa con el paso 7 del flujo principal.
+
+*Flujo Alternativo FA-02: Número de colegiado duplicado*
+
+1. El sistema verifica si el número de colegiado ya está registrado.
+2. Si el número de colegiado ya existe:
+* El sistema muestra el mensaje de error: "El número de colegiado ingresado ya está registrado en el sistema. Por favor, ingrese un número diferente".
+3. El doctor modifica el número de colegiado.
+4. El sistema vuelve a validar los datos para asegurarse de que no estén duplicados.
+5. Si el número de colegiado es único, el sistema continúa con el paso 7 del flujo principal.
+
+
+*Requerimientos Especiales:*
+
+* El número de colegiado debe ser único en el sistema.
+* La interfaz debe proporcionar validaciones en tiempo real y mensajes de error claros.
+
+
 
 ### Prototipo
 
-![Prototipo registrar Doctores](diagramas/prototipo_registar_doctor.png)
-
-
-## Requerimientos Especiales
-
-1. El número de colegiado debe ser único en el sistema.
+![alt text](diagramas/prototipo_registrar_estudiante.jpg)
 
 ---
 
-## Escenarios de Prueba
+*Escenarios de Prueba:*
 
-| **Entrada**                                         | **Salida esperada**                                                                  |
-| --------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| Doctor completa todos los campos correctamente      | El sistema registra la información correctamente.                                    |
-| Doctor omite un campo obligatorio                   | El sistema muestra un mensaje de error indicando los campos faltantes.               |
-| Doctor ingresa un número de colegiado que ya existe | El sistema muestra un mensaje de error indicando duplicidad del número de colegiado. |
+| Escenario | Entrada | Salida esperada |
+| --- | --- | --- |
+| Registro exitoso | Datos completos y válidos | El sistema registra al doctor correctamente. |
+| Campo obligatorio omitido | Datos con un campo obligatorio vacío | El sistema muestra un mensaje de error indicando el campo faltante. |
+| Número de colegiado duplicado | Número de colegiado ya registrado | El sistema muestra un mensaje de error indicando duplicidad. |
 
 ---
 
@@ -626,44 +693,63 @@ Este caso de uso permite registrar a un doctor en el sistema para que pueda brin
 
 ---
 
-## CU-01RF-08: Modificar Horario de Trabajo del Doctor
+## CU-01RF-08: Modificar su horario de trabajo
 
 ### Descripción
 
-Este caso de uso permite que un doctor modifique su horario de trabajo en el sistema de gestión de citas.
+Este caso de uso permite al doctor modificar su propio horario de trabajo dentro del sistema, ajustando las franjas horarias disponibles para citas con los estudiantes.
 
 ### Actores
 
-- Doctor
-- Sistema
+* *Primarios:* Doctor, Sistema
 
 ### Precondiciones
 
-- El doctor debe estar registrado y autenticado en el sistema.
+* El doctor debe estar registrado en el sistema.
+* El doctor debe haber iniciado sesión en el sistema.
+
 
 ### Postcondiciones
 
-- El horario del doctor se actualiza en el sistema.
+* El horario del doctor se actualiza en el sistema, y los estudiantes pueden visualizar las nuevas franjas horarias disponibles.
+* Si existen citas que se vean afectadas por la modificación del horario, el sistema notificará automáticamente a los estudiantes sobre los cambios y ofrecerá la opción de reagendar o cancelar.
+
 
 ### Flujo Principal
 
-1. El doctor accede al sistema.
-2. El sistema muestra la opción "Modificar Horario de Trabajo".
-3. El doctor selecciona la opción y ajusta los días y horas de su disponibilidad.
-4. El sistema valida que no haya citas agendadas en los nuevos horarios.
-5. El sistema guarda el nuevo horario.
+1. El doctor accede al sistema con sus credenciales.
+2. El sistema muestra las opciones disponibles para el doctor, incluyendo la opción de modificar su horario de trabajo.
+3. El doctor selecciona la opción "Modificar horario de trabajo."
+4. El sistema despliega un formulario con su horario actual.
+5. El doctor ajusta las horas y días de su disponibilidad.
+6. El sistema valida que los nuevos horarios no entren en conflicto con citas ya programadas.
+7. El sistema guarda los nuevos horarios en la base de datos.
+8. El sistema actualiza la disponibilidad en tiempo real y notifica a los estudiantes afectados, si los hubiera.
+9. El sistema muestra un mensaje de confirmación al doctor, indicando que el horario ha sido modificado exitosamente.
+
 
 ### Flujo Alternativo
 
-#### FA-01: Horarios en conflicto con citas existentes
+*FA-01:* Horarios en conflicto con citas existentes.
 
-1. El sistema muestra un mensaje indicando el conflicto de horarios.
-2. El doctor ajusta los horarios o contacta con los pacientes afectados.
+1. El sistema detecta que la modificación del horario entraría en conflicto con citas previamente registradas.
+2. El sistema muestra un mensaje de advertencia al doctor, informando sobre las citas afectadas.
+3. El doctor puede optar por mantener esas franjas horarias ocupadas o contactar a los estudiantes para reprogramar.
+4. El sistema valida nuevamente y procede a guardar los cambios o mantener el horario original en caso de no resolver los conflictos.
+
+*FA-02:* Datos no válidos.
+
+1. El sistema detecta que algunos campos están incompletos o contienen errores (por ejemplo, horas fuera de rango o fechas no válidas).
+2. El sistema muestra un mensaje de error indicando los campos que deben ser corregidos.
+3. El doctor corrige los datos.
+4. El sistema vuelve a validar los datos y procede a actualizar el horario si todo es válido.
+
 
 ## Requerimientos Especiales
 
-1. El sistema debe validar que los horarios introducidos no se sobrepongan con horarios ya existentes.
-2. El sistema debe notificar automáticamente a los estudiantes si alguna de sus citas se ve afectada por el cambio de horario.
+* El sistema debe validar que los horarios introducidos no se sobrepongan con horarios ya existentes.
+* El sistema debe notificar automáticamente a los estudiantes si alguna de sus citas se ve afectada por el cambio de horario.
+
 
 ### Prototipo
 
@@ -671,15 +757,15 @@ Este caso de uso permite que un doctor modifique su horario de trabajo en el sis
 
 ## Escenarios de Prueba
 
-| **Entrada**                     | **Acción**                                                                          | **Resultado Esperado**                                                  |
-| ------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| Credenciales válidas            | El doctor accede al sistema                                                         | Se muestra el menú principal con las opciones disponibles.              |
-| Información de horario completa | El doctor selecciona modificar horario y ajusta las horas disponibles               | El sistema guarda los nuevos horarios y muestra confirmación.           |
-| Información de horario completa | El doctor intenta modificar un horario que tiene citas previamente agendadas        | El sistema muestra un mensaje de error indicando el conflicto.          |
-| Médico sin horario asignado     | El doctor intenta modificar un horario cuando no tiene horas asignadas              | El sistema muestra un mensaje de error indicando la falta de horario.   |
-| Horario inválido                | El doctor introduce horas fuera del rango permitido (por ejemplo, horas no válidas) | El sistema muestra un mensaje de error indicando datos inválidos.       |
-| Datos incompletos               | El doctor no completa los campos necesarios para modificar el horario               | El sistema muestra un mensaje de error solicitando la corrección.       |
-| Modificación exitosa            | El doctor selecciona horas válidas y sin conflicto                                  | El sistema actualiza el horario y notifica a los estudiantes afectados. |
+| Entrada | Acción | Resultado Esperado |
+| --- | --- | --- |
+| Credenciales válidas | El doctor accede al sistema | Se muestra el menú principal con las opciones disponibles. |
+| Información de horario completa | El doctor selecciona modificar horario y ajusta las horas disponibles | El sistema guarda los nuevos horarios y muestra confirmación. |
+| Información de horario completa | El doctor intenta modificar un horario que tiene citas previamente agendadas | El sistema muestra un mensaje de error indicando el conflicto. |
+| Médico sin horario asignado | El doctor intenta modificar un horario cuando no tiene horas asignadas | El sistema muestra un mensaje de error indicando la falta de horario. |
+| Horario inválido | El doctor introduce horas fuera del rango permitido (por ejemplo, horas no válidas) | El sistema muestra un mensaje de error indicando datos inválidos. |
+| Datos incompletos | El doctor no completa los campos necesarios para modificar el horario | El sistema muestra un mensaje de error solicitando la corrección. |
+| Modificación exitosa | El doctor selecciona horas válidas y sin conflicto | El sistema actualiza el horario y notifica a los estudiantes afectados. |
 
 ### Autor:
 
@@ -687,7 +773,8 @@ Este caso de uso permite que un doctor modifique su horario de trabajo en el sis
 
 ---
 
-## CU-01RF-09: Consultar Horario de Trabajo del Doctor
+## CU-01RF-09: Consultar horario de trabajo
+
 
 ### Descripción
 
@@ -700,7 +787,9 @@ Este caso de uso permite que un doctor consulte su horario de trabajo en el sist
 
 ### Precondiciones
 
-- El doctor debe estar registrado en el sistema.
+* El doctor debe estar registrado en el sistema y tener un perfil habilitado para la consulta de su horario de trabajo.
+* El doctor debe iniciar sesión en el sistema.
+
 
 ### Postcondiciones
 
@@ -709,35 +798,46 @@ Este caso de uso permite que un doctor consulte su horario de trabajo en el sist
 ### Flujo Principal
 
 1. El doctor accede al sistema.
-2. El sistema muestra la opción "Consultar Horario de Trabajo".
-3. El doctor selecciona la opción y el sistema muestra su horario con día, hora y ubicación.
+2. El sistema muestra la opción de consultar el horario de trabajo.
+3. El doctor selecciona la la opción de "Consultar Horario de Trabajo".
+4. El sistema muestra el horario de trabajo del doctor, que incluye: día\, hora de inicio\, hora de fin\, ubicación de la consulta (numero de consultorio) \.
+
 
 ### Flujo Alternativo
 
-#### FA-01: No tiene horario asignado
+*FA-01:* Doctor no tiene horario asignado
 
-1. El sistema muestra un mensaje indicando que no hay horario asignado.
-2. El doctor regresa al menú principal.
+1. El sistema muestra un mensaje de que no hay horario asignado al doctor.
+2. El sistema le permite al doctor solicitar una revisión de su perfil o asignación de horario.
+
+*FA-02:* Día u hora no disponible
+
+1. El doctor intenta consultar su horario para un día u hora no disponible (por ejemplo, fuera de su horario regular o en un día bloqueado por el sistema).
+2. El sistema muestra un mensaje de error indicando que el día u hora seleccionada no está disponible para consultas.
+3. El doctor puede seleccionar otra fecha o revisar su horario en un día y hora permitidos.
+4. El sistema vuelve a mostrar el horario para una fecha válida.    
 
 ### Prototipo
 
-![Prototipo consultar horario doctor](diagramas/prototipo_consultar_horario_doctor.png)
+![Prototipo Consultar Horario de Trabajo de Doctor](diagramas/prototipo_consultar_horario_doctor.jpg)
 
 ## Escenarios de Prueba
 
-| **Escenario**                            | **Acción**                                                     | **Resultado**                                                                                    |
-| ---------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| Credenciales válidas                     | El doctor accede al sistema                                    | Se muestra el menú principal.                                                                    |
-| Sin horario asignado                     | El doctor consulta su horario de trabajo                       | Mensaje: "No tiene horario asignado".                                                            |
-| Consulta de día u hora fuera del horario | El doctor consulta su horario para un día u hora no disponible | Mensaje de error: "Día u hora no disponible".                                                    |
-| Selección de formato semanal             | El doctor selecciona "Consultar Horario" en formato semanal    | El sistema muestra el horario completo de la semana, con día, hora de inicio, fin y consultorio. |
+| Escenario | Acción | Resultado |
+| --- | --- | --- |
+| Credenciales válidas | El doctor accede al sistema  | Se muestra el menú principal |
+| Sin horario asignado  | El doctor consulta su horario de trabajo  | Mensaje: "No tiene horario asignado" |
+| Consulta de día u hora fuera del horario  | El doctor consulta su horario para un día u hora no disponible  | Mensaje de error: "Día u hora no disponible" |
+| Selección de formato semanal  | El doctor selecciona "Consultar Horario" en formato semanal  | El sistema muestra el horario completo de la semana, con día, hora de inicio, fin y consultorio |
+
 
 ---
 
-## Requerimientos Especiales
+#### *Requerimientos especiales:*
 
-1. El sistema debe permitir ver el horario tanto en formato semanal como diario.
-2. El sistema debe actualizarse en tiempo real si hay cambios en el horario del doctor.
+* El sistema debe permitir ver el horario tanto en formato semanal como diario.
+* El sistema debe actualizarse en tiempo real si hay cambios en el horario del doctor.
+
 
 ### Autor:
 
@@ -746,10 +846,11 @@ Este caso de uso permite que un doctor consulte su horario de trabajo en el sist
 ---
 
 ## CU-01RF-10: Consultar Citas Asignadas al Doctor
+-----------------------------------------------
 
 ### Descripción
 
-Este caso de uso permite que un doctor consulte las citas asignadas en su agenda según el día o la semana.
+Este caso de uso permite que un doctor consulte las citas asignadas en su agenda.
 
 ### Actores
 
@@ -758,19 +859,22 @@ Este caso de uso permite que un doctor consulte las citas asignadas en su agenda
 
 ### Precondiciones
 
-- El doctor debe estar registrado en el sistema.
-- Debe haber citas asignadas en su agenda.
+
+* El doctor debe estar autenticado correctamente en el sistema para acceder a las funciones de doctor.
+
 
 ### Postcondiciones
 
-- El doctor puede ver las citas asignadas en el rango de tiempo seleccionado.
+* El doctor puede ver las citas asignadas.
+
 
 ### Flujo Principal
 
-1. El doctor accede al sistema.
-2. El sistema muestra el menú principal.
-3. El doctor selecciona la opción "Consultar Citas Asignadas".
-4. El sistema muestra la lista de citas asignadas con detalles como nombre del paciente, fecha y hora.
+
+1. Consulta las citas pendientes. Se vincula al FA01.
+2. El sistema muestra la lista de citas asignadas con detalles como la fecha,  nombre del paciente y hora. Se vincula FA-02
+3. El sistema no muestra
+
 
 ### Flujo Alternativo
 
@@ -779,24 +883,32 @@ Este caso de uso permite que un doctor consulte las citas asignadas en su agenda
 1. El sistema muestra un mensaje indicando que no hay citas asignadas.
 2. El doctor regresa al menú principal.
 
+#### *FA-02: Se muestra con éxito las citas*
+
+1. El sistema muestra la lista de las citas pendientes con los detalles.
+2. Muestra el mensaje de “Cistas consultadas con éxito”.
+3. El doctor regresa al menú principal.
+
+
 ## Prototipo
 
-![Prototipo consultar citas agendadas doctor](diagramas/prototipo_consultar_citas_doctor.png)
+![Prototipo Consultar Citas Asignadas](diagramas/prototipo_consultar_citas_asignadas.jpg)
 
 ## Requerimientos Especiales
 
-1. El sistema debe notificar automáticamente al doctor sobre cambios en su agenda (cancelaciones, reprogramaciones) por correo electrónico.
+1. Solamente se muestra la información del doctor a los que previamente están autenticados con ese rol.
+
 
 ---
 
 ## Escenarios de Prueba
 
-| **Entrada**                      | **Acción**                                            | **Resultado esperado**                                                                                |
-| -------------------------------- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Credenciales válidas             | El doctor accede al sistema                           | Se muestra el menú principal.                                                                         |
-| Sin citas en el día seleccionado | El doctor consulta sus citas                          | Mensaje: "No hay citas asignadas para el rango seleccionado."                                         |
-| Cita con fecha mal asignada      | El doctor consulta sus citas                          | Mensaje de error por fecha incorrecta y opción de corregir o eliminar la cita.                        |
-| Selección de rango de tiempo     | El doctor selecciona "Consultar Citas" para la semana | El sistema muestra todas las citas de la semana, con nombre del paciente, horario, motivo y duración. |
+| *Entrada* | *Acción* | *Resultado esperado* |
+| --- | --- | --- |
+| Credenciales válidas | El doctor accede al sistema | Se muestra el menú principal. |
+| Sin citas en el día seleccionado | El doctor consulta sus citas | Mensaje: "No hay citas asignadas para el rango seleccionado." |
+| Cita con fecha mal asignada | El doctor consulta sus citas | Mensaje de error por fecha incorrecta y opción de corregir o eliminar la cita. |
+| Selección de rango de tiempo | El doctor selecciona "Consultar Citas" para la semana | El sistema muestra todas las citas de la semana, con nombre del paciente, horario, motivo y duración. |
 
 ---
 
@@ -806,11 +918,12 @@ Este caso de uso permite que un doctor consulte las citas asignadas en su agenda
 
 ---
 
-## CU-01RF-11: Modificar Citas en la Agenda del Doctor
+## CU-01RF-11: Modificar Cita de su Agenda
+
 
 ### Descripción
 
-Este caso de uso permite que un doctor modifique las citas ya registradas en su agenda dentro del sistema.
+Este caso de uso permite que un doctor modifique las citas ya registradas en su agenda dentro del sistema de gestión de citas de la clínica universitaria.
 
 ### Actores
 
@@ -819,52 +932,86 @@ Este caso de uso permite que un doctor modifique las citas ya registradas en su 
 
 ### Precondiciones
 
-- El doctor debe estar registrado y autenticado en el sistema.
-- Debe existir al menos una cita asignada.
+* El doctor debe estar registrado y autenticado en el sistema.
+* Debe existir al menos una cita asignada al doctor.
+
 
 ### Postcondiciones
 
-- La cita modificada se actualiza en el sistema.
-- El doctor recibe una confirmación de la modificación.
+* La cita modificada se actualiza en el sistema con la nueva información.
+* El doctor recibe una confirmación de la modificación.
+
 
 ### Flujo Principal
 
 1. El doctor accede al sistema con sus credenciales.
-2. El sistema muestra el menú principal.
-3. El doctor selecciona la opción "Consultar Citas Asignadas".
-4. El sistema muestra la lista de citas.
-5. El doctor selecciona la cita a modificar.
-6. El sistema muestra un formulario para cambiar la fecha y hora.
-7. El doctor confirma la modificación y el sistema valida los cambios.
-8. El sistema actualiza la cita y envía una notificación al doctor.
+
+* El sistema valida las credenciales y permite el acceso al menú principal.
+
+2\. El sistema muestra el menú principal.
+
+3\. El doctor selecciona la opción "Consultar Citas Asignadas".
+
+4\. El sistema muestra la lista de citas, incluyendo fecha, hora, paciente, y estado de la cita.
+
+5\. El doctor selecciona la cita a modificar.
+
+* El sistema verifica que la cita esté en un estado modificable (por ejemplo, que no haya pasado o no esté cancelada).
+
+6\. El sistema muestra un formulario para cambiar la fecha y la hora, junto con los detalles actuales de la cita (fecha, hora, paciente).
+
+* El sistema verifica la disponibilidad en tiempo real de la nueva fecha y hora.
+
+7\. El doctor confirma la modificación y el sistema valida los cambios.
+
+* La validación incluye que la nueva fecha y hora no entren en conflicto con otras citas, estén dentro del horario del doctor, y cumplan con las políticas de modificación del sistema.
+
+8\. El sistema actualiza la cita y envía una notificación al doctor y al paciente.
+
+* Notificación al doctor: Detalles de la cita modificada (nueva fecha, hora y paciente).
+* Notificación al paciente: Información de la nueva fecha y hora de la cita, con instrucciones para confirmar la modificación.
+
 
 ### Flujo Alternativo
 
-#### FA-01: Fecha/Hora no disponible
+*FA-01: No hay citas asignadas*
 
-1. El sistema muestra un mensaje indicando que la fecha u hora seleccionada no está disponible.
-2. El doctor selecciona otra fecha u hora disponible.
+1. El sistema muestra un mensaje indicando que no hay citas asignadas.
+2. El doctor regresa al menú principal.
+
+*FA-02: Fecha/Hora no disponible*
+
+1. El doctor selecciona una nueva fecha u hora que no está disponible.
+2. El sistema muestra un mensaje indicando que la nueva fecha/hora no está disponible.
+3. El doctor selecciona otra fecha/hora disponible o regresa al menú principal.
+
+*FA-03: Error en los detalles modificados*
+
+1. El doctor introduce datos no válidos (por ejemplo, un horario fuera de su disponibilidad).
+2. El sistema muestra un mensaje de error indicando los detalles incorrectos.
+3. El doctor corrige los datos y vuelve a intentar la modificación.
+
+*Requerimientos Especiales*
+
+* El sistema debe notificar automáticamente al paciente sobre cambios en su cita (modificación de fecha, hora, o detalles) por correo electrónico.
+* Las modificaciones deben ser registradas en el historial del doctor para referencia futura.
+
 
 ### Prototipo
 
 ![Prototipo modificar citas agendadas doctor](diagramas/prototipo_modificar_citas_doctor.png)
 
-## Requerimientos Especiales
-
-1. El sistema debe notificar automáticamente al paciente sobre cambios en su cita (modificación de fecha, hora, o detalles) por correo electrónico.
-2. Las modificaciones deben ser registradas en el historial del doctor para referencia futura.
 
 ---
 
 ## Escenarios de Prueba
 
-| **Entrada**              | **Acción**                                   | **Resultado esperado**                                                                       |
-| ------------------------ | -------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| Credenciales válidas     | El doctor accede al sistema                  | Se muestra el menú principal.                                                                |
-| Cita existente           | El doctor selecciona una cita para modificar | El sistema muestra el formulario con los detalles de la cita para modificar.                 |
-| Fecha/Hora no disponible | El doctor intenta modificar la cita          | El sistema muestra un mensaje de error indicando que la nueva fecha/hora no está disponible. |
-| Modificación exitosa     | El doctor confirma los cambios               | El sistema actualiza los detalles de la cita y muestra un mensaje de confirmación de éxito.  |
-
+| *Entrada* | *Acción* | *Resultado esperado* |
+| --- | --- | --- |
+| Credenciales válidas | El doctor accede al sistema | Se muestra el menú principal |
+| Cita existente | El doctor selecciona una cita para modificar | El sistema muestra el formulario con los detalles de la cita para modificar |
+| Fecha/Hora no disponible | El doctor intenta modificar la cita | El sistema muestra un mensaje de error indicando que la nueva fecha/hora no está disponible |
+| Modificación exitosa | El doctor confirma los cambios | El sistema actualiza los detalles de la cita y muestra un mensaje de confirmación de que la modificación fue exitosa |
 ---
 
 ### Autor:
@@ -877,7 +1024,7 @@ Este caso de uso permite que un doctor modifique las citas ya registradas en su 
 
 ### Descripción
 
-Este caso de uso permite que un doctor cancele una cita previamente registrada en su agenda dentro del sistema.
+Este caso de uso permite que un doctor cancele una cita previamente registrada en su agenda dentro del sistema de gestión de citas de la clínica.
 
 ### Actores
 
@@ -886,36 +1033,49 @@ Este caso de uso permite que un doctor cancele una cita previamente registrada e
 
 ### Precondiciones
 
-- El doctor debe estar registrado y autenticado en el sistema.
-- Debe existir al menos una cita asignada al doctor.
+
+* El doctor debe estar registrado y autenticado en el sistema.
+* Debe existir al menos una cita asignada al doctor.
+
 
 ### Postcondiciones
 
-- La cita es cancelada y eliminada del sistema.
-- El paciente recibe una notificación de la cancelación.
+* La cita es cancelada y eliminada del sistema.
+* El paciente recibe una notificación de la cancelación.
+
 
 ### Flujo Principal
 
-1. El doctor accede al sistema con sus credenciales.
-2. El sistema muestra el menú principal.
-3. El doctor selecciona la opción "Consultar Citas Asignadas".
-4. El sistema muestra las citas asignadas.
-5. El doctor selecciona la cita a cancelar.
-6. El sistema muestra la opción para confirmar la cancelación.
-7. El doctor confirma la cancelación y el sistema elimina la cita.
-8. El paciente es notificado de la cancelación por correo electrónico.
+1. El sistema verifica las credenciales y muestra el menú principal.
+2. El doctor selecciona la opción "Consultar Citas Asignadas".
+3. El sistema muestra las citas asignadas al doctor, incluyendo: nombre del paciente, horario y detalles de la cita.
+4. El doctor selecciona la cita que desea cancelar.
+5. El sistema muestra una opción para confirmar la cancelación de la cita.
+6. El doctor confirma la cancelación.
+7. El sistema valida la solicitud y elimina la cita del registro.
+8. El sistema notifica al doctor que la cita ha sido cancelada.
+9. El sistema envía una notificación al paciente informando sobre la cancelación de la cita.
+10. El doctor regresa al menú principal.
+
 
 ### Flujo Alternativo
 
-#### FA-01: No hay citas asignadas
+*FA-01: No hay citas asignadas*
 
-1. El sistema muestra un mensaje indicando que no hay citas asignadas.
-2. El doctor regresa al menú principal.
+* El sistema muestra un mensaje indicando que no hay citas asignadas.
+* El doctor regresa al menú principal.
+
+*FA-02: Cancelación no permitida (cita pasada)*
+
+* El doctor selecciona una cita cuyo horario ya ha pasado.
+* El sistema muestra un mensaje indicando que la cita no puede ser cancelada.
+* El doctor regresa al menú principal o selecciona otra cita para cancelar.
+
 
 ## Requerimientos Especiales
 
-1. El sistema debe notificar automáticamente al paciente sobre la cancelación de su cita por correo electrónico.
-2. Las cancelaciones deben ser registradas en el historial del doctor para referencia futura.
+1. *Notificación automática*: Cuando la cita es cancelada por el doctor, se envía una notificación por correo electrónico al estudiante sobre la cancelación de su cita.
+
 
 ### Prototipo
 
@@ -923,16 +1083,21 @@ Este caso de uso permite que un doctor cancele una cita previamente registrada e
 
 ## Escenarios de Prueba
 
-| **Entrada**          | **Acción**                                  | **Resultado esperado**                                                      |
-| -------------------- | ------------------------------------------- | --------------------------------------------------------------------------- |
-| Credenciales válidas | El doctor accede al sistema                 | Se muestra el menú principal.                                               |
-| Cita existente       | El doctor selecciona una cita para cancelar | El sistema muestra la opción de confirmación para cancelar la cita.         |
-| Cita pasada          | El doctor intenta cancelar una cita pasada  | El sistema muestra un mensaje indicando que la cita no puede ser cancelada. |
-| Cancelación exitosa  | El doctor confirma la cancelación           | El sistema elimina la cita y notifica tanto al doctor como al paciente.     |
+| *Entrada* | *Acción* | *Resultado esperado* |
+| --- | --- | --- |
+| Credenciales válidas | El doctor accede al sistema | Se muestra el menú principal. |
+| Cita existente | El doctor selecciona una cita para cancelar | El sistema muestra la opción de confirmación para cancelar la cita. |
+| Cita pasada | El doctor intenta cancelar una cita pasada | El sistema muestra un mensaje indicando que la cita no puede ser cancelada. |
+| Cancelación exitosa | El doctor confirma la cancelación | El sistema elimina la cita y notifica tanto al doctor como al paciente. |
+
 
 ---
 
 ### Autor:
 
 - Claudia Ulloa Campabadal
+
+
+
+
 
