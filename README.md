@@ -590,7 +590,7 @@ Este caso de uso permite que un estudiante consulte la disponibilidad de citas m
 
 ### Prototipo
 
-![Prototipo Consultar Disponibilidad de Citas](diagramas/prototipo_consultar_disponibilidad_citas_especialidd.png)
+![Prototipo Consultar Disponibilidad de Citas](diagramas/prototipo_consultar_disponibilidad_citas_especialidad.png)
 
 ## Requerimientos Especiales
 
